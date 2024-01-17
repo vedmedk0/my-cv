@@ -1,5 +1,4 @@
 enablePlugins(ScalaJSPlugin)
-enablePlugins(GhpagesPlugin)
 
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
@@ -14,9 +13,8 @@ libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "2.8.0",
   "com.lihaoyi" %%% "scalatags" % "0.12.0"
 )
-siteSourceDirectory := target.value / "scala-2.13" / "my-cv-new-fastopt"
+siteSourceDirectory := target.value / "scala-2.13" / "my-cv-new-opt"
 makeSite / mappings ++= Seq(
   file("src/main/resources/index.html") -> "index.html",
   file("src/main/resources/pure-min.css") -> "pure-min.css"
 )
-git.remoteRepo := "git@github.com:vedmedk0/my-cv.git"
