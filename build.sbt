@@ -13,8 +13,9 @@ libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "2.8.0",
   "com.lihaoyi" %%% "scalatags" % "0.12.0"
 )
-siteSourceDirectory := target.value / "scala-2.13" / "my-cv-new-opt"
+siteSourceDirectory := target.value / "scala-2.13" / "my-cv-new-fastopt"
 makeSite / mappings ++= Seq(
   file("src/main/resources/index.html") -> "index.html",
-  file("src/main/resources/pure-min.css") -> "pure-min.css"
+  file("src/main/resources/pure-min.css") -> "pure-min.css",
+  file("src/main/resources/photo.jpeg") -> "photo.jpeg"
 )

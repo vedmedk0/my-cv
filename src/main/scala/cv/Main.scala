@@ -1,6 +1,6 @@
 package cv
 
-import cv.page.Page
+import cv.page._
 import org.scalajs.dom
 import org.scalajs.dom.document
 import scalatags.JsDom.all._
@@ -12,13 +12,11 @@ object Main {
 
   val pages = Seq(
     Page(
-      button("Overview", `class` := "pure-button").render,
+      "Overview",
       h1("Header of my nice cv")
     ),
-    Page(
-      button("Experience", `class` := "pure-button").render,
-      h1("My super job history")
-    )
+    AboutMePage.page,
+    ExperiencePage.page
   )
 
   val content = div(pages(0).pageContent).render
@@ -34,11 +32,14 @@ object Main {
   }
 
   val panel = div(
-    pages.map(_.button),
-    style := "display: inline-flex;"
+    `class` := "pure-menu-horizontal",
+    style := "display: inline-flex;",
+    span(`class` := "pure-menu-heading", "Curriculum vitae"),
+    ul(`class` := "pure-menu-list", pages.map(_.button))
   )
 
   val page = div(
+    style := "font-family: monospace",
     panel,
     content
   )
