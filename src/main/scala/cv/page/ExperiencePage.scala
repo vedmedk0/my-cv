@@ -11,7 +11,7 @@ object ExperiencePage {
   private val content =
     div(
       h1(style := "text-align: center;", "Experience"),
-      style := "padding-left: 10em; padding-right: 10em; margin-top: 2em;",
+      style := "padding-left: 6em; padding-right: 6em; margin-top: 2em;",
       PeriodItem(
         "Data Engineer (Streaming Platform)",
         "Wolt",
@@ -50,6 +50,16 @@ object ExperiencePage {
         experienceEntry(
           "Development of logistics algorithms, data analysis and processing.",
           "Python, SQL, OpenStreetMap API"
+        )
+      ).toElement,
+      PeriodItem(
+        "Researcher",
+        "Institute of Control Sciences",
+        "Nov 2015",
+        "Jun 2018",
+        experienceEntry(
+          "Programming of control systems, analysis and tuning of controller models.",
+          "MATLAB, Simulink, Control Design Toolbox"
         )
       ).toElement
     )

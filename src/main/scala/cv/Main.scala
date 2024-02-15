@@ -13,7 +13,8 @@ object Main {
   val pages = Seq(
     AboutMePage.page,
     EducationPage.page,
-    ExperiencePage.page
+    ExperiencePage.page,
+    AchievementsPage.page
   )
 
   val content = div(pages(0).pageContent).render
@@ -32,7 +33,21 @@ object Main {
     `class` := "pure-menu-horizontal",
     style := "display: inline-flex;",
     span(`class` := "pure-menu-heading", "Curriculum vitae"),
-    ul(`class` := "pure-menu-list", pages.map(_.button))
+    div(
+      `class` := "pure-u-12-24",
+      ul(`class` := "pure-menu-list", pages.map(_.button))
+    ),
+    div(
+      style := "text-align: right;",
+      `class` := "pure-u-12-24",
+      ul(
+        `class` := "pure-menu-list",
+        div(
+          `class` := "pure-menu-item",
+          a("Print", href := "#", `class` := "pure-menu-link")
+        )
+      )
+    )
   )
 
   val page = div(

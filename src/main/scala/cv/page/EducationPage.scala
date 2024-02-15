@@ -8,7 +8,7 @@ object EducationPage {
   private val content =
     div(
       h1(style := "text-align: center;", "Education"),
-      style := "padding-left: 10em; padding-right: 10em; margin-top: 2em;",
+      style := "padding-left: 6em; padding-right: 6em; margin-top: 2em;",
       PeriodItem(
         "Master's degree",
         "Moscow State University",
