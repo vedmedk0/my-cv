@@ -3,7 +3,7 @@ package cv.page
 import cv.components.PeriodItem
 import scalatags.JsDom.all._
 
-object ExperiencePage {
+object EducationPage {
 
   private val content =
     div(

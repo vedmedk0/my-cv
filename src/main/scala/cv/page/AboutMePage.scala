@@ -1,5 +1,7 @@
 package cv.page
 
+import org.scalajs.dom.html.Div
+import scalatags.JsDom
 import scalatags.JsDom.all._
 
 object AboutMePage {
@@ -48,19 +50,17 @@ object AboutMePage {
             "My drivers: curiosity, the desire to learn as much as possible, and apply the acquired knowledge. Learning is inseparable for me from the work, one without the other loses its meaning. Non-confrontational, I consider myself as a team player."
           ),
           br,
-          div("GPA: 4.8"),
-          br,
           div("Hobbies: music, programming, fitness, board games")
         )
       )
     )
 
-  private val content =
+  private val content: JsDom.TypedTag[Div] =
     div(
       style := "display: block;",
       `class` := "pure-g",
       description,
-      div(`class` := "pure-u-2-5", img(src := "photo.jpeg"))
+      div(`class` := "pure-u-2-5", img(style:="margin-top: 1em;",src := "photo.jpeg"))
     )
 
   val page = Page("About Me", content)
