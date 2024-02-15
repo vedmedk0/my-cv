@@ -6,6 +6,7 @@ import org.scalajs.dom.document
 import scalatags.JsDom.all._
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
+import scala.scalajs.js.timers._
 
 @JSExportTopLevel("Main")
 object Main {
@@ -23,14 +24,18 @@ object Main {
     b.addEventListener(
       "click",
       { (e: dom.MouseEvent) =>
-        content.innerHTML = ""
-        content.appendChild(c.render)
+        content.setAttribute("class", "fadeOut")
+        setTimeout(300) {
+          content.innerHTML = ""
+          content.appendChild(c.render)
+          content.setAttribute("class", "fadeIn")
+        }
       }
     )
   }
 
   val panel = div(
-    `class` := "pure-menu-horizontal",
+    `class` := "pure-menu-horizontal menu",
     style := "display: inline-flex;",
     span(`class` := "pure-menu-heading", "Curriculum vitae"),
     div(
