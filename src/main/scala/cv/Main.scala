@@ -11,11 +11,8 @@ import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 object Main {
 
   val pages = Seq(
-    Page(
-      "Overview",
-      h1("Header of my nice cv")
-    ),
     AboutMePage.page,
+    EducationPage.page,
     ExperiencePage.page
   )
 
@@ -39,7 +36,7 @@ object Main {
   )
 
   val page = div(
-    style := "font-family: monospace",
+    style := "font-family: monospace; font-size: 1.25em",
     panel,
     content
   )

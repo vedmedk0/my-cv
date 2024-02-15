@@ -7,16 +7,28 @@ object EducationPage {
 
   private val content =
     div(
+      h1(style := "text-align: center;", "Education"),
       style := "padding-left: 10em; padding-right: 10em; margin-top: 2em;",
       PeriodItem(
-        "Header",
-        "SubHeader",
-        "2020",
-        "2050",
-        div(style := "color:red;", "some content")
+        "Master's degree",
+        "Moscow State University",
+        "2016",
+        "2018",
+        div(
+          "Faculty of Physics, Division of Applied Mathematics, Department of Physical-Mathematical Control Methods, Specialization \"System analysis, mathematical modeling and control theory\""
+        )
+      ).toElement,
+      PeriodItem(
+        "Bachelor's degree",
+        "Moscow State University",
+        "2012",
+        "2016",
+        div(
+          "Faculty of Physics, Specialization \"Physics\""
+        )
       ).toElement
     )
 
-  val page = Page("Experience", content)
+  val page = Page("Education", content)
 
 }

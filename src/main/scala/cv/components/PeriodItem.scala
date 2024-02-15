@@ -13,14 +13,14 @@ case class PeriodItem(
 ) {
   def toElement: JsDom.TypedTag[Table] = table(
     `class` := "pure-table pure-table-horizontal",
-    style := "width: 100%;",
+    style := "width: 100%; margin-top: 0.5em; margin-bottom: 0.5em",
     thead(
       tr(th(header))
     ),
     tbody(
       tr(
         td(
-          h3(subHeader),
+          h3(style := "margin-top: 0.5em; margin-bottom: 0.5em", subHeader),
           div(
             `class` := "pure-g",
             div(`class` := "pure-u-1-5", startInterval + " - " + endInterval),
