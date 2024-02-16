@@ -2,7 +2,7 @@ package cv
 
 import cv.page._
 import org.scalajs.dom
-import org.scalajs.dom.document
+import org.scalajs.dom.{document, window}
 import scalatags.JsDom.all._
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
@@ -34,6 +34,25 @@ object Main {
     )
   }
 
+  val printButton = li(
+    `class` := "pure-menu-item",
+    a("Print", href := "#", `class` := "pure-menu-link")
+  ).render
+
+  printButton.addEventListener(
+    "click",
+    { (e: dom.MouseEvent) =>
+      content.innerHTML = ""
+      panel.render.remove()
+      pages.foreach { case Page(_, c) =>
+        content.appendChild(c.render)
+      }
+      window.print()
+      document.body.innerHTML = ""
+      document.body.appendChild(page.render)
+    }
+  )
+
   val panel = div(
     `class` := "pure-menu-horizontal menu",
     style := "display: inline-flex;",
@@ -47,10 +66,7 @@ object Main {
       `class` := "pure-u-12-24",
       ul(
         `class` := "pure-menu-list",
-        div(
-          `class` := "pure-menu-item",
-          a("Print", href := "#", `class` := "pure-menu-link")
-        )
+        printButton
       )
     )
   )
