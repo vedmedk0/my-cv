@@ -18,17 +18,19 @@ object Main {
     AchievementsPage.page
   )
 
+  val pageBreaks: Set[Int] = Set(1, 2)
+
   val content = div(pages(0).pageContent).render
 
   pages.foreach { case Page(b, c) =>
     b.addEventListener(
       "click",
-      { (e: dom.MouseEvent) =>
-        content.setAttribute("class", "fadeOut")
+      { (_: dom.MouseEvent) =>
+        content.setAttribute("class", "fade-out")
         setTimeout(300) {
           content.innerHTML = ""
           content.appendChild(c.render)
-          content.setAttribute("class", "fadeIn")
+          content.setAttribute("class", "fade-in")
         }
       }
     )
@@ -41,15 +43,19 @@ object Main {
 
   printButton.addEventListener(
     "click",
-    { (e: dom.MouseEvent) =>
+    { (_: dom.MouseEvent) =>
       content.innerHTML = ""
       panel.render.remove()
-      pages.foreach { case Page(_, c) =>
+      pages.zipWithIndex.foreach { case (Page(_, c), i) =>
         content.appendChild(c.render)
+        if (pageBreaks.contains(i))
+          content.appendChild(div(`class` := "page-break").render)
       }
       window.print()
       document.body.innerHTML = ""
       document.body.appendChild(page.render)
+      content.innerHTML = ""
+      content.appendChild(pages(0).pageContent.render)
     }
   )
 

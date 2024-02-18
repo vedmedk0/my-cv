@@ -9,6 +9,7 @@ object AchievementsPage {
     h1(style := "text-align: center;", "Achievements"),
     h4("Wolt"),
     ul(
+      `class` := "cv-list",
       li(
         "Developed solution for monitoring data warehouse tasks, ETL and dashboard, increasing visibility"
       ),
@@ -21,6 +22,7 @@ object AchievementsPage {
     ),
     h4("Kryptonite"),
     ul(
+      `class` := "cv-list",
       li(
         "Improved a geospatial data aggregation algorithm, made it more accurate."
       ),
@@ -33,6 +35,7 @@ object AchievementsPage {
     ),
     h4("OJSC \"Trading System Administrator\""),
     ul(
+      `class` := "cv-list",
       li(
         "Made the system of tags and filters for the catalog of analytical variables in data warehouse more convenient for end-user."
       ),
@@ -45,6 +48,7 @@ object AchievementsPage {
     ),
     h4("LLC \"Inform-podderzhka\""),
     ul(
+      `class` := "cv-list",
       li(
         "Developed a graphical interface for visualizing the result of the algorithm in the static problem of cargo assignment."
       ),
@@ -57,6 +61,7 @@ object AchievementsPage {
     ),
     h4("Institute of Control Sciences"),
     ul(
+      `class` := "cv-list",
       li(
         "Developed adaptive controller with predicting model of vertical position of math model of plasma in tokamak T-15."
       ),

@@ -18,5 +18,5 @@ makeSite / mappings ++= Seq(
   file("src/main/resources/index.html") -> "index.html",
   file("src/main/resources/pure-min.css") -> "pure-min.css",
   file("src/main/resources/photo.jpeg") -> "photo.jpeg",
-    file("src/main/resources/custom-styles.css") -> "custom-styles.css"
+  file("src/main/resources/custom-styles.css") -> "custom-styles.css"
 )

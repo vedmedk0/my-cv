@@ -20,7 +20,7 @@ case class PeriodItem(
     tbody(
       tr(
         td(
-          h3(style := "margin-top: 0.5em; margin-bottom: 0.5em", subHeader),
+          h3(style := "margin-top: 0; margin-bottom: 0.2em", subHeader),
           div(
             `class` := "pure-g",
             div(`class` := "pure-u-1-5", startInterval + " - " + endInterval),
