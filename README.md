@@ -1,4 +1,4 @@
-# my_cv
+# My CV
 One-page cv for hosting on github pages
 
 Built with ScalaJS
