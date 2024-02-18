@@ -37,7 +37,7 @@ object AboutMePage {
         ),
         div(
           b("Areas of interest: "),
-          "data engineering, streaming, Scala/Python development, backend, BI, data analysis."
+          "data engineering, data streaming, Scala/Python development, backend, BI, data analysis."
         ),
         h4("Key skills:", style := "margin-top: 0.5em; margin-bottom: 0px;"),
         ul(
