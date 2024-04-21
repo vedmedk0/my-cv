@@ -15,7 +15,7 @@ object ExperiencePage {
       PeriodItem(
         "Data Engineer (Streaming Platform)",
         "Wolt",
-        "Aug 2020",
+        "Aug 2022",
         "Present",
         experienceEntry(
           "Support of existing streaming solutions and development and integration of new approaches to data streaming - streaming platform and data lakehouse",
