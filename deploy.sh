@@ -2,7 +2,7 @@
 set -euxo pipefail
 DIR=/tmp/pages-deploy
 CURRENT=$(pwd)
-COMMIT_MSG="push ver 8"
+COMMIT_MSG="push ver 9"
 sbt "reload ; clean ; fullOptJS ; packageSite"
 rm -rf $DIR
 mkdir $DIR

@@ -13,7 +13,7 @@ object ExperiencePage {
       h1(style := "text-align: center;", "Experience"),
       style := "padding-left: 6em; padding-right: 6em; margin-top: 2em;",
       PeriodItem(
-        "Data Engineer (Streaming Platform)",
+        "Software Engineer (Streaming Platform)",
         "Wolt",
         "Aug 2022",
         "Present",
@@ -23,13 +23,13 @@ object ExperiencePage {
         )
       ).toElement,
       PeriodItem(
-        "Data Engineer",
+        "Back-end/Data Engineer",
         "Kryptonite",
         "Jul 2020",
         "Jul 2022",
         experienceEntry(
           "Development of back-end services and ETL jobs for data analysis applications.",
-          "Scala, Spark, Kafka, ClickHouse, Elasticsearch, CockRoach, Kubernetes"
+          "Scala, Spark, Kafka, ClickHouse, Elasticsearch, CockroachDB, Kubernetes"
         )
       ).toElement,
       PeriodItem(

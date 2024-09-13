@@ -16,7 +16,7 @@ object AboutMePage {
           `class` := "cv-list",
           style := "display: inline-block; text-align: left;",
           li(b("Full name: "), "Mikhail Golubtsov"),
-          li(b("Position: "), "Data Engineer"),
+          li(b("Position: "), "Software Engineer"),
           li(b("Company: "), "", a(href := "https://wolt.com/", "Wolt")),
           li(b("Birth date: "), "26 June 1994 г."),
           li(
@@ -37,7 +37,7 @@ object AboutMePage {
         ),
         div(
           b("Areas of interest: "),
-          "data engineering, data streaming, Scala/Python development, backend, BI, data analysis."
+          "software engineering, data streaming, Scala/Python development, backend, BI, data analysis."
         ),
         h4("Key skills:", style := "margin-top: 0.5em; margin-bottom: 0px;"),
         ul(

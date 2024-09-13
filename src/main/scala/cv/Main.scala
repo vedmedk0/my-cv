@@ -1,12 +1,13 @@
 package cv
 
+import cv.behaviour.PageBehaviour
 import cv.page._
-import org.scalajs.dom
-import org.scalajs.dom.{document, window}
+import org.scalajs.dom.document
+import org.scalajs.dom.html.Div
+import scalatags.JsDom
 import scalatags.JsDom.all._
 
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
-import scala.scalajs.js.timers._
 
 @JSExportTopLevel("Main")
 object Main {
@@ -18,48 +19,16 @@ object Main {
     AchievementsPage.page
   )
 
-  val pageBreaks: Set[Int] = Set(1, 2)
+  val content: Div = div(pages(0).pageContent).render
 
-  val content = div(pages(0).pageContent).render
-
-  pages.foreach { case Page(b, c) =>
-    b.addEventListener(
-      "click",
-      { (_: dom.MouseEvent) =>
-        content.setAttribute("class", "fade-out")
-        setTimeout(300) {
-          content.innerHTML = ""
-          content.appendChild(c.render)
-          content.setAttribute("class", "fade-in")
-        }
-      }
-    )
-  }
+  PageBehaviour.changePageBehaviour(pages, content)
 
   val printButton = li(
     `class` := "pure-menu-item",
     a("Print", href := "#", `class` := "pure-menu-link")
   ).render
 
-  printButton.addEventListener(
-    "click",
-    { (_: dom.MouseEvent) =>
-      content.innerHTML = ""
-      panel.render.remove()
-      pages.zipWithIndex.foreach { case (Page(_, c), i) =>
-        content.appendChild(c.render)
-        if (pageBreaks.contains(i))
-          content.appendChild(div(`class` := "page-break").render)
-      }
-      window.print()
-      document.body.innerHTML = ""
-      document.body.appendChild(page.render)
-      content.innerHTML = ""
-      content.appendChild(pages(0).pageContent.render)
-    }
-  )
-
-  val panel = div(
+  val panel: JsDom.TypedTag[Div] = div(
     `class` := "pure-menu-horizontal menu",
     style := "display: inline-flex;",
     span(`class` := "pure-menu-heading", "Curriculum vitae"),
@@ -77,14 +46,16 @@ object Main {
     )
   )
 
-  val page = div(
+  val fullPage: JsDom.TypedTag[Div] = div(
     style := "font-family: monospace; font-size: 1.25em",
     panel,
     content
   )
 
+  PageBehaviour.printBehaviour(fullPage, printButton, panel, pages, content)
+
   @JSExport
   def main(): Unit = {
-    document.body.appendChild(page.render)
+    document.body.appendChild(fullPage.render)
   }
 }
